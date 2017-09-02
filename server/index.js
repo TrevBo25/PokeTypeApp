@@ -5,7 +5,7 @@ var cors = require('cors');
 var app = express();
 
 app.use(cors());
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 var searches = []
 
@@ -16,7 +16,6 @@ app.post('/api/search', function(req, res){
 })
 
 app.get('/api/search', function(req, res){
-    
         res.status(200).json(searches);
     } )
 
